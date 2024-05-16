@@ -1,0 +1,17 @@
+[Install]
+WantedBy=multi-user.target
+
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+User=root
+Group=root
+
+WorkingDirectory=/botik-2/botik-v3/
+Environment="PYTHONPATH=/botik-2/botik-v3/“
+ExecStart=/botik-2/botenv/bin/python  /botik-2/botik-v3/bot.py
+
+[Install]
+WantedBy=multi-user.target
