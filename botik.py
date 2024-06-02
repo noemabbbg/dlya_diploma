@@ -37,19 +37,6 @@ from test2 import *
 
 
 
-# привязка по жанрам. есть, но очень кривой и медленный код. 
-# автообновление глав≠
-# aergsthydtg
-# handler криво работает. 
-
-
-
-#уведомление о выходе новой главы 
-#закладки 
-#автообновление глав 
-
-
-
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=MemoryStorage())
@@ -219,10 +206,10 @@ async def adm_panel(message: types.message):
     if message.from_user.id == 133886300:
         await bot.send_message(message.from_user.id, text = 'Панелька.', reply_markup = kb.adm_panel)
     else: 
-        await bot.send_message(message.from_user.id, text = 'у тебя нет доступа братанчик, ну или есть🧐 ', reply_markup = kb.adm_panel)
+        await bot.send_message(message.from_user.id, text = 'Панель администратора', reply_markup = kb.adm_panel)
 
 
-@dp.message_handler(commands=['abobatest123'])
+@dp.message_handler(commands=['download123'])
 async def adm_panel(message: types.message):
     print(df.get_u_title_list())
     await add_title_full(df.get_u_title_list())
